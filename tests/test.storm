@@ -1,0 +1,28 @@
+// a shameless tring
+/*
+Foo bar baz
+*/
+
+function wat(n) {
+    if $n {
+        return ( 4 )
+    }
+    return (5)
+}
+
+for x in $foobar {
+    $lib.print('wat') | spin
+}
+
+yield [it:reveng:function = $lib.guid()]
+
+inet:ipv4 -> foo:bar
+foo:bar -+> wat:no
+inet:ipv4=1.2.3.4
+syn:tag~=gh0st
+foo | bar
+file:bytes:size >= 4
+file:bytes:size <= 4
+file:bytes:size > 10
+file:bytes:size < 10
+file:bytes:.seen@=(1, 2)
