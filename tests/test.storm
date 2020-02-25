@@ -22,7 +22,7 @@ True
 False
 yield [it:reveng:function = $lib.guid()]
 
-neato // a shameless comment
+wat:neato // a shameless comment
 
 
 inet:ipv4 -> inet:dns:a | limit 10
@@ -49,7 +49,10 @@ count
 inet:ipv4 -> inet:dns:a | count | spin
 inet:ipv4 -+> inet:dns:a | count | spin
 foo:bar <+- bar:baz
-foo:bar <- bar:baz
+foo:bar :foo <- bar:baz
+foo:bar :.seen=123
+foo:bar:.seen
+foo:bar:.seen:.created
 /*
 Foo bar baz
 */
