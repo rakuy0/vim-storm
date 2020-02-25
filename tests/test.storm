@@ -1,28 +1,50 @@
-// a shameless tring
-/*
-Foo bar baz
-*/
-
+5
+file:bytes:.seen@=(1, 2)
+foo:bar -+> wat:no
 function wat(n) {
     if $n {
         return ( 4 )
     }
     return (5)
 }
-
+$a + 4
+#aka
+#aka.foo
+#aka.foo.bar #foobar
+#aka.sei.mal.foobar@=(1, 2)
++#aka.sei.mal.foobar foobar +#aka.foo.bar
+file:bytes +#aka93.kaspersky1.foo.mal.wat
 for x in $foobar {
-    $lib.print('wat') | spin
+    $lib.print('wat\' superwat \' "foobar"') | spin
+    $lib.print("wat' superwat ' \"foobar\"") | spin
 }
-
+True
+False
 yield [it:reveng:function = $lib.guid()]
 
-inet:ipv4 -> foo:bar
-foo:bar -+> wat:no
+// a shameless thing
+
+inet:ipv4 -> inet:dns:a | limit 10
 inet:ipv4=1.2.3.4
 syn:tag~=gh0st
+inet:ipv4=1.2.3.4
+foo=0x2355
+a + b
+a - b
+a*in=wat
+a in b
 foo | bar
-file:bytes:size >= 4
-file:bytes:size <= 4
-file:bytes:size > 10
-file:bytes:size < 10
-file:bytes:.seen@=(1, 2)
+foo:bar?=wat
+file:bytes:size>=4399
+file:bytes:size<=0x4490
+file:bytes:size>10
+file:bytes:size<10
+340
+delnode
+iden
+spin
+sleep
+count
+/*
+Foo bar baz
+*/
