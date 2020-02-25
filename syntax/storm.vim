@@ -17,24 +17,23 @@ syn keyword stormConditional switch if elif else
 
 "syn keyword stormFuncStmt function nextgroup=stormFunction skipwhite
 
-
-" Various operators
-syn match stormOperator     '\V=\|*\|@\|/\|%\|&\||\|^\|~\|<\|>\|!=\|'
-syn match stormOperator     '\V=\|?=\|->\|<-\|-+>\|<+-\|'
-syn match stormOperator     '*in\||\|>=\|<=\|\~=\|>\|<\|@=\|+\|-'
-
 " Comments
-syn match singleComment /\/\/[^\n]*/
-syn region multiComment start='\/\*' end='\*\/'
 
 " Strings
 syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
 syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
 "syn region stormExprStmt start="\\$\\(" end="\\)"
 
-syn region stormEditParens start='\[' end='\]'
+
+" Various operators
+syn match stormOperator     "\V=\|*\|@\|/\|%\|&\||\|^\|~\|<\|>\|!=\|"
+syn match stormOperator     "\V=\|?=\|->\|<-\|-+>\|<+-\|"
+syn match stormOperator     "*in\||\|>=\|<=\|\~=\|>\|<\|@=\|+\|-"
 
 " Fun times. These don't work if they're earlier in the files
+syn region stormEditParens start="\[" end="\]"
+syn region singleComment start="\v\/\/" end="\v$"
+syn region multiComment start="\v\/\*" end="\v\*\/"
 syn match stormTags   "\v#\w+(\.\w+)*"
 syn match stormNumber "\v<[0-9]+>" display
 syn match stormNumber  "\v<[0-9]*[.]?[0-9]+>" display

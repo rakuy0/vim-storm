@@ -22,7 +22,8 @@ True
 False
 yield [it:reveng:function = $lib.guid()]
 
-// a shameless thing
+neato // a shameless comment
+
 
 inet:ipv4 -> inet:dns:a | limit 10
 inet:ipv4=1.2.3.4
@@ -45,6 +46,10 @@ iden
 spin
 sleep
 count
+inet:ipv4 -> inet:dns:a | count | spin
+inet:ipv4 -+> inet:dns:a | count | spin
+foo:bar <+- bar:baz
+foo:bar <- bar:baz
 /*
 Foo bar baz
 */
