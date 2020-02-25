@@ -40,6 +40,7 @@ file:bytes:size>=4399
 file:bytes:size<=0x4490
 file:bytes:size>10
 file:bytes:size<10
+file:bytes=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 340
 delnode
 iden

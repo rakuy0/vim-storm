@@ -17,9 +17,6 @@ syn keyword stormConditional switch if elif else
 " get highlighted by this)
 syn keyword stormCmds sleep service iden max min tee delnode limit count uniq spin
 
-" Strings
-syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
-syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
 "syn region stormExprStmt start="\\$\\(" end="\\)"
 
 
@@ -27,6 +24,10 @@ syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl
 syn match stormOperator     "\V=\|*\|@\|/\|%\|&\||\|^\|~\|<\|>\|!=\|"
 syn match stormOperator     "\V=\|?=\|->\|<-\|-+>\|<+-\|"
 syn match stormOperator     "*in\||\|>=\|<=\|\~=\|>\|<\|@=\|+\|-"
+
+" Strings
+syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
+syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
 
 " Fun times. These don't work if they're earlier in the files
 syn region stormEditParens start="\[" end="\]"
