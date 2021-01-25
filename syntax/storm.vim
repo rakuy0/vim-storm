@@ -31,6 +31,7 @@ syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl
 
 " Fun times. These don't work if they're earlier in the files
 syn region stormEditParens start="\[" end="\]"
+syn region stormSubQueryBraces start="\v(\+|\-)\{" end="\}" keepend
 syn region singleComment start="\v\/\/" end="\v$"
 syn region multiComment start="\v\/\*" end="\v\*\/"
 syn match stormTags   "\v#\w+(\.\w+)*"
@@ -60,4 +61,4 @@ hi def link singleComment Comment
 
 " So this isn't a constant, but in my colorscheme it's red and edits are SPICY, SO RED
 hi def link stormEditParens Constant
-
+hi def link stormSubQueryBraces Special
