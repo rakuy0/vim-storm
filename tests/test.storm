@@ -57,3 +57,7 @@ foo:bar:.seen:.created
 /*
 Foo bar baz
 */
+
+{ This should not be highlighted as (except for the not and the for and the and :))}
++{Yar, this be a subquery}
+-{This also be one of them subqueries}
