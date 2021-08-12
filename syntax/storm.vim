@@ -15,15 +15,34 @@ syn keyword stormConditional switch if elif else
 
 " So these aren't keywords *per se* and they conflict with things in $lib.time and $lib.service (so they
 " get highlighted by this)
-syn keyword stormCmds sleep service iden max min tee delnode limit count uniq spin
 
 "syn region stormExprStmt start="\\$\\(" end="\\)"
-
+syn match stormVariables    "\v\$(\w|\.)+"
 
 " Various operators
-syn match stormOperator     "\V=\|*\|@\|/\|%\|&\||\|^\|~\|<\|>\|!=\|"
-syn match stormOperator     "\V=\|?=\|->\|<-\|-+>\|<+-\|"
-syn match stormOperator     "*in\||\|>=\|<=\|\~=\|>\|<\|@=\|+\|-"
+syn match stormOperator "\V="
+syn match stormOperator "\V@="
+syn match stormOperator "\V*="
+syn match stormOperator "\V^="
+syn match stormOperator "\V!="
+syn match stormOperator "\V?="
+syn match stormOperator "\V>="
+syn match stormOperator "\V<="
+syn match stormOperator "\V~="
+syn match stormOperator "\V>"
+syn match stormOperator "\V<"
+syn match stormOperator "\V->"
+syn match stormOperator "\V<-"
+syn match stormOperator "\V-+>"
+syn match stormOperator "\V<+-"
+syn match stormOperator "\V*in="
+syn match stormOperator "\V+"
+syn match stormOperator "\V-"
+syn match stormOperator "\V*"
+syn match stormOperator "\V/"
+syn match stormOperator "\V&"
+syn match stormOperator "\V%"
+syn match stormOperator "\V|"
 
 " Strings
 syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
@@ -55,7 +74,7 @@ hi def link stormTags Statement
 hi def link stormOperator Operator
 hi def link stormAbsProp Type
 hi def link stormRelProp Type
-hi def link stormCmds Identifier
+hi def link stormVariables Identifier
 hi def link multiComment Comment
 hi def link singleComment Comment
 
