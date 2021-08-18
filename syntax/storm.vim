@@ -10,7 +10,7 @@ syn keyword stormBool True False
 syn keyword stormLoops for while 
 syn keyword stormKeywords break continue return yield in
 syn keyword stormKeywords init fini
-syn keyword stormKeywords not or and
+syn keyword stormKeywords not or and divert
 syn keyword stormConditional switch if elif else
 
 " So these aren't keywords *per se* and they conflict with things in $lib.time and $lib.service (so they
