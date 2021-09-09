@@ -10,7 +10,7 @@ syn keyword stormBool True False
 syn keyword stormLoops for while 
 syn keyword stormKeywords break continue return yield in
 syn keyword stormKeywords init fini
-syn keyword stormKeywords not or and divert
+syn keyword stormKeywords not or and divert uniq
 syn keyword stormConditional switch if elif else
 
 " So these aren't keywords *per se* and they conflict with things in $lib.time and $lib.service (so they
@@ -79,5 +79,5 @@ hi def link multiComment Comment
 hi def link singleComment Comment
 
 " So this isn't a constant, but in my colorscheme it's red and edits are SPICY, SO RED
-hi def link stormEditParens Constant
+hi def link stormEditParens Structure
 hi def link stormSubQueryBraces Special
