@@ -10,11 +10,8 @@ syn keyword stormBool True False
 syn keyword stormLoops for while 
 syn keyword stormKeywords break continue return yield in
 syn keyword stormKeywords init fini
-syn keyword stormKeywords not or and divert uniq
-syn keyword stormConditional switch if elif else
-
-" So these aren't keywords *per se* and they conflict with things in $lib.time and $lib.service (so they
-" get highlighted by this)
+syn keyword stormKeywords not or and divert uniq once tee spin
+syn keyword stormConditional switch if elif else try catch
 
 "syn region stormExprStmt start="\\$\\(" end="\\)"
 syn match stormVariables    "\v\$(\w|\.)+"
@@ -49,6 +46,7 @@ syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl
 syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
 
 " Fun times. These don't work if they're earlier in the files
+syn region stormTripleSingleQuotes start="\'\'\'" end="\'\'\'"
 syn region stormEditParens start="\[" end="\]"
 syn region stormSubQueryBraces start="\v(\+|\-)\{" end="\}" keepend
 syn region singleComment start="\v\/\/" end="\v$"
@@ -80,4 +78,5 @@ hi def link singleComment Comment
 
 " So this isn't a constant, but in my colorscheme it's red and edits are SPICY, SO RED
 hi def link stormEditParens Structure
+hi def link stormTripleSingleQuotes String
 hi def link stormSubQueryBraces Special
