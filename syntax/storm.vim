@@ -9,8 +9,8 @@ let b:current_syntax="storm"
 syn keyword stormBool True False
 syn keyword stormLoops for while 
 syn keyword stormKeywords break continue return yield in
-syn keyword stormKeywords init fini
-syn keyword stormKeywords not or and divert uniq once tee spin
+syn keyword stormKeywords init fini emit stop
+syn keyword stormKeywords not or and divert uniq once tee spin delnode background
 syn keyword stormConditional switch if elif else try catch
 
 "syn region stormExprStmt start="\\$\\(" end="\\)"
