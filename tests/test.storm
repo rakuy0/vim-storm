@@ -70,3 +70,5 @@ try catch
 Neato burrito
 '''
 foob
+
+`this is a format string with {stuff}`
