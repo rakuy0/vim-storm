@@ -6,11 +6,17 @@ endif
 
 let b:current_syntax="storm"
 
+" the default vim syntax keyword doesn't include a period. Include that here.
+syntax iskeyword @,48-57,192-255,$,_,.
+
 syn keyword stormBool True False
 syn keyword stormLoops for while 
 syn keyword stormKeywords break continue return yield in
 syn keyword stormKeywords init fini emit stop empty
-syn keyword stormKeywords not or and divert uniq once tee spin delnode background
+syn keyword stormKeywords not or and divert uniq once tee spin delnode background batch help diff
+syn keyword stormKeywords copyto merge movetags movenodes limit max min reindex count iden
+syn keyword stormKeywords graph sleep background parallel tree scrape
+syn keyword stormKeywords view.exec lift.byverb edges.del tag.prune runas intersect
 syn keyword stormConditional switch if elif else try catch
 
 "syn region stormExprStmt start="\\$\\(" end="\\)"
