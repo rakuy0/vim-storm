@@ -48,12 +48,13 @@ syn match stormOperator "\V|" containedIn=stormEditParens
 syn match stormOperator "\V*near=" containedIn=stormEditParens
 syn match stormOperator "\V*unset=" containedIn=stormEditParens
 syn match stormOperator "\V*range=" containedIn=stormEditParens
+syn match stormOperator "*$\w+=" containedIn=stormEditParens
 
 " Strings
 syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
 syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
 syn region stormFormatString start=+`+ skip=+\\\\\|\\'\|\\$+ end=+`+ end=+$+ excludenl keepend
-syn match stormVariables    "\v\$(\w)+"
+syn match stormVariables    "\v\$(\w)+" containedIn=stormEditParens
 
 " Fun times. These don't work if they're earlier in the files
 syn region stormArrayFilter start="\V*[" end="\V]" containedIn=stormEditParens
