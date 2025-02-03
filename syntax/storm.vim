@@ -45,10 +45,9 @@ syn match stormOperator "\V/" containedIn=stormEditParens
 syn match stormOperator "\V&" containedIn=stormEditParens
 syn match stormOperator "\V%" containedIn=stormEditParens
 syn match stormOperator "\V|" containedIn=stormEditParens
-syn match stormOperator "\V*in" containedIn=stormEditParens
-syn match stormOperator "\V*near" containedIn=stormEditParens
-syn match stormOperator "\V*unset" containedIn=stormEditParens
-syn match stormOperator "\V*range" containedIn=stormEditParens
+syn match stormOperator "\V*near=" containedIn=stormEditParens
+syn match stormOperator "\V*unset=" containedIn=stormEditParens
+syn match stormOperator "\V*range=" containedIn=stormEditParens
 
 " Strings
 syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
