@@ -50,6 +50,13 @@ syn match stormOperator "\V*unset=" containedIn=stormEditParens
 syn match stormOperator "\V*range=" containedIn=stormEditParens
 syn match stormOperator "*$\w+=" containedIn=stormEditParens
 
+syn match stormOperator "\V?+=" containedIn=stormEditParens
+syn match stormOperator "\V?-=" containedIn=stormEditParens
+syn match stormOperator "\V++=" containedIn=stormEditParens
+syn match stormOperator "\V--=" containedIn=stormEditParens
+syn match stormOperator "\V?++=" containedIn=stormEditParens
+syn match stormOperator "\V?--=" containedIn=stormEditParens
+
 " Strings
 syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
 syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
