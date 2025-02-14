@@ -72,8 +72,8 @@ syn region stormLightEdgeN2 start="\V-(" start="\V+(" end="\V)>" containedIn=sto
 syn region stormTripleSingleQuotes start="\'\'\'" end="\'\'\'"
 syn region stormEditParens start="\[" end="\]"
 syn region stormSubQueryBraces start="\v(\+|\-)\{" end="\}" keepend containedIn=stormEditParens
-syn region singleComment start="\v\/\/" end="\v$"
-syn region multiComment start="\v\/\*" end="\v\*\/"
+syn region singleComment start="\v\/\/" end="\v$" containedIn=stormEditParens
+syn region multiComment start="\v\/\*" end="\v\*\/" containedIn=stormEditParens
 syn match stormTags   "\v#\w+(\.\w+)*" containedIn=stormEditParens
 syn match stormNumber "\v<[0-9]+>" display
 "syn match stormNumber  "\v<[0-9]*[.]?[0-9]+>" display
