@@ -9,6 +9,7 @@ let b:current_syntax="storm"
 " the default vim syntax keyword doesn't include a period. Include that here.
 syntax iskeyword @,48-57,192-255,$,_,.
 
+" A lot of the commands we can remove and let stormgls handle with its semantic highlighting
 syn keyword stormBool True False
 syn keyword stormLoops for while 
 syn keyword stormKeywords break continue return yield in
@@ -58,15 +59,18 @@ syn match stormOperator "\V?++=" containedIn=stormEditParens
 syn match stormOperator "\V?--=" containedIn=stormEditParens
 
 " Strings
-syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
-syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
-syn region stormFormatString start=+`+ skip=+\\\\\|\\'\|\\$+ end=+`+ end=+$+ excludenl keepend
+syn region stormString start=+\V'+ skip=+\\\\\|\\'\|\\$+ end=+\V'+ end=+$+ excludenl keepend containedIn=stormEditParens
+syn region stormString start=+\V"+ skip=+\\\\\|\\"\|\\$+ end=+\V"+ end=+$+ excludenl keepend containedIn=stormEditParens
+syn region stormFormatString start="\V`" skip=+\\\\\|\\'\|\\$+ end="\V`" end=+$+ excludenl keepend containedIn=stormEditParens
 syn match stormVariables    "\v\$(\w)+" containedIn=stormEditParens
 
 " Fun times. These don't work if they're earlier in the files
 syn region stormArrayFilter start="\V*[" end="\V]" containedIn=stormEditParens
 syn region stormLightEdgeN1 start="\V<(" end="\V)+" end="\V)-" containedIn=stormEditParens
 syn region stormLightEdgeN2 start="\V-(" start="\V+(" end="\V)>" containedIn=stormEditParens
+
+syn region stormLightEdgeN1 start="\V<+(" end="\V)-" containedIn=stormEditParens
+syn region stormLightEdgeN2 start="\V-(" end="\V)+>" containedIn=stormEditParens
 
 
 syn region stormTripleSingleQuotes start="\'\'\'" end="\'\'\'"

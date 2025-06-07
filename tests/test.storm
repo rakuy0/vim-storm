@@ -72,3 +72,15 @@ Neato burrito
 foob
 
 `this is a format string with {stuff}`
+
+foo -(name)+> bar
+foo <+(name)- bar
+
+copyto foo bar
+background
+view.list
+
+[inet:server?=`{$proto}://{$ip}`] --> *
+[inet:server?="{$proto}://{$ip}"] --> *
+
+inet:server?=`{$proto}://{$ip}` -> *
