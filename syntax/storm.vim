@@ -9,6 +9,7 @@ let b:current_syntax="storm"
 " the default vim syntax keyword doesn't include a period. Include that here.
 syntax iskeyword @,48-57,192-255,$,_,.
 
+" A lot of the commands we can remove and let stormgls handle with its semantic highlighting
 syn keyword stormBool True False
 syn keyword stormLoops for while 
 syn keyword stormKeywords break continue return yield in
@@ -22,59 +23,63 @@ syn keyword stormConditional switch if elif else try catch
 "syn region stormExprStmt start="\\$\\(" end="\\)"
 
 " Various operators
-syn match stormOperator "\V=" containedIn=stormEditParens
-syn match stormOperator "\V@=" containedIn=stormEditParens
-syn match stormOperator "\V*=" containedIn=stormEditParens
-syn match stormOperator "\V^=" containedIn=stormEditParens
-syn match stormOperator "\V!=" containedIn=stormEditParens
-syn match stormOperator "\V?=" containedIn=stormEditParens
-syn match stormOperator "\V>=" containedIn=stormEditParens
-syn match stormOperator "\V<=" containedIn=stormEditParens
-syn match stormOperator "\V~=" containedIn=stormEditParens
-syn match stormOperator "\V>" containedIn=stormEditParens
-syn match stormOperator "\V<" containedIn=stormEditParens
-syn match stormOperator "\V->" containedIn=stormEditParens
-syn match stormOperator "\V<-" containedIn=stormEditParens
-syn match stormOperator "\V-+>" containedIn=stormEditParens
-syn match stormOperator "\V<+-" containedIn=stormEditParens
-syn match stormOperator "\V*in=" containedIn=stormEditParens
-syn match stormOperator "\V+" containedIn=stormEditParens
-syn match stormOperator "\V-" containedIn=stormEditParens
-syn match stormOperator "\V*" containedIn=stormEditParens
-syn match stormOperator "\V/" containedIn=stormEditParens
-syn match stormOperator "\V&" containedIn=stormEditParens
-syn match stormOperator "\V%" containedIn=stormEditParens
-syn match stormOperator "\V|" containedIn=stormEditParens
-syn match stormOperator "\V*near=" containedIn=stormEditParens
-syn match stormOperator "\V*unset=" containedIn=stormEditParens
-syn match stormOperator "\V*range=" containedIn=stormEditParens
-syn match stormOperator "*$\w+=" containedIn=stormEditParens
+syn match stormOperator "\V="
+syn match stormOperator "\V@="
+syn match stormOperator "\V*="
+syn match stormOperator "\V^="
+syn match stormOperator "\V!="
+syn match stormOperator "\V?="
+syn match stormOperator "\V>="
+syn match stormOperator "\V<="
+syn match stormOperator "\V~="
+syn match stormOperator "\V>"
+syn match stormOperator "\V<"
+syn match stormOperator "\V->"
+syn match stormOperator "\V<-"
+syn match stormOperator "\V-+>"
+syn match stormOperator "\V<+-"
+syn match stormOperator "\V*in="
+syn match stormOperator "\V+"
+syn match stormOperator "\V-"
+syn match stormOperator "\V*"
+syn match stormOperator "\V/"
+syn match stormOperator "\V&"
+syn match stormOperator "\V%"
+syn match stormOperator "\V|"
+syn match stormOperator "\V*near="
+syn match stormOperator "\V*unset="
+syn match stormOperator "\V*unset?="
+syn match stormOperator "\V*range="
+syn match stormOperator "*$\w+="
 
-syn match stormOperator "\V?+=" containedIn=stormEditParens
-syn match stormOperator "\V?-=" containedIn=stormEditParens
-syn match stormOperator "\V++=" containedIn=stormEditParens
-syn match stormOperator "\V--=" containedIn=stormEditParens
-syn match stormOperator "\V?++=" containedIn=stormEditParens
-syn match stormOperator "\V?--=" containedIn=stormEditParens
+syn match stormOperator "\V?+="
+syn match stormOperator "\V?-="
+syn match stormOperator "\V++="
+syn match stormOperator "\V--="
+syn match stormOperator "\V?++="
+syn match stormOperator "\V?--="
 
 " Strings
-syn region stormString start=+'+ skip=+\\\\\|\\'\|\\$+ end=+'+ end=+$+ excludenl keepend
-syn region stormString start=+"+ skip=+\\\\\|\\"\|\\$+ end=+"+ end=+$+ excludenl keepend
-syn region stormFormatString start=+`+ skip=+\\\\\|\\'\|\\$+ end=+`+ end=+$+ excludenl keepend
-syn match stormVariables    "\v\$(\w)+" containedIn=stormEditParens
+syn region stormString start=+\V'+ skip=+\\\\\|\\'\|\\$+ end=+\V'+ end=+$+ excludenl keepend
+syn region stormString start=+\V"+ skip=+\\\\\|\\"\|\\$+ end=+\V"+ end=+$+ excludenl keepend
+syn region stormFormatString start="\V`" skip=+\\\\\|\\'\|\\$+ end="\V`" end=+$+ excludenl keepend
+syn match stormVariables    "\v\$(\w)+"
 
 " Fun times. These don't work if they're earlier in the files
-syn region stormArrayFilter start="\V*[" end="\V]" containedIn=stormEditParens
-syn region stormLightEdgeN1 start="\V<(" end="\V)+" end="\V)-" containedIn=stormEditParens
-syn region stormLightEdgeN2 start="\V-(" start="\V+(" end="\V)>" containedIn=stormEditParens
+syn region stormArrayFilter start="\V*[" end="\V]"
+syn region stormLightEdgeN1 start="\V<(" end="\V)+" end="\V)-"
+syn region stormLightEdgeN2 start="\V-(" start="\V+(" end="\V)>"
+
+syn region stormLightEdgeN1 start="\V<+(" end="\V)-"
+syn region stormLightEdgeN2 start="\V-(" end="\V)+>"
 
 
 syn region stormTripleSingleQuotes start="\'\'\'" end="\'\'\'"
-syn region stormEditParens start="\[" end="\]"
-syn region stormSubQueryBraces start="\v(\+|\-)\{" end="\}" keepend containedIn=stormEditParens
-syn region singleComment start="\v\/\/" end="\v$" containedIn=stormEditParens
-syn region multiComment start="\v\/\*" end="\v\*\/" containedIn=stormEditParens
-syn match stormTags   "\v#\w+(\.\w+)*" containedIn=stormEditParens
+" syn region stormEditParens start="\[" end="\]"
+syn region stormSubQueryBraces start="\v(\+|\-)\{" end="\}" keepend
+syn region singleComment start="\v\/\/" end="\v$"
+syn region multiComment start="\v\/\*" end="\v\*\/"
+syn match stormTags   "\v#\w+(\.\w+)*"
 syn match stormNumber "\v<[0-9]+>" display
 "syn match stormNumber  "\v<[0-9]*[.]?[0-9]+>" display
 syn match stormNumber  "\v<0[xX][0-9a-fA-F]+>" display
@@ -104,7 +109,7 @@ hi def link multiComment Comment
 hi def link singleComment Comment
 hi def link stormFuncCall Function
 
-hi def link stormEditParens Added
+" hi def link stormEditParens Added
 hi def link stormTripleSingleQuotes String
 hi def link stormSubQueryBraces Special
 
