@@ -65,14 +65,13 @@ syn region stormString start=+\V"+ skip=+\\\\\|\\"\|\\$+ end=+\V"+ end=+$+ exclu
 syn region stormFormatString start="\V`" skip=+\\\\\|\\'\|\\$+ end="\V`" end=+$+ excludenl keepend
 syn match stormVariables    "\v\$(\w)+"
 
+syn region stormLightEdgeN1 start="\V<+(" end="\V)-"
+syn region stormLightEdgeN2 start="\V-(" end="\V)+>"
+
 " Fun times. These don't work if they're earlier in the files
 syn region stormArrayFilter start="\V*[" end="\V]"
 syn region stormLightEdgeN1 start="\V<(" end="\V)+" end="\V)-"
 syn region stormLightEdgeN2 start="\V-(" start="\V+(" end="\V)>"
-
-syn region stormLightEdgeN1 start="\V<+(" end="\V)-"
-syn region stormLightEdgeN2 start="\V-(" end="\V)+>"
-
 
 syn region stormTripleSingleQuotes start="\'\'\'" end="\'\'\'"
 " syn region stormEditParens start="\[" end="\]"
@@ -111,7 +110,7 @@ hi def link stormFuncCall Function
 
 " hi def link stormEditParens Added
 hi def link stormTripleSingleQuotes String
-hi def link stormSubQueryBraces Special
+" hi def link stormSubQueryBraces Special
 
 " Doesn't quite map to anything vim knows about
 hi def link stormLightEdgeN1 Macro
